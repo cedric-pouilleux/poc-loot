@@ -16,6 +16,17 @@ export type Player = {
     wish: string[];
 }
 
+export type PriorityStep = {
+    itemKey: string;
+    playerName: string;
+}
+
+export type PriorityItem = {
+    player: string;
+    priority: number;
+    itemKey: string;
+}
+
 export type Wish = string[];
 
 export type Wishlist = {

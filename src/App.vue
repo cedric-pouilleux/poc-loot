@@ -15,21 +15,43 @@
       </li>
     </ul>
   </div>
+
+  <div>
+    <h2>Individual item priorities check</h2>
+    <select v-model="selectedItem">
+      <option v-for="(item, key ) in items" :key="item.id" :value="key">{{ item.title }}</option>
+    </select>
+
+    <ul v-if="results.length">
+      <li v-for="result in results" :key="result">{{ result.player }} with {{ result.priority }} priority score</li>
+    </ul>
+    <div v-else>
+      Pas de prioritées
+    </div>
+
+  </div>
 </template>
 
 <script lang="ts" setup>
+import {ref, watch} from 'vue';
 import {gnomeregan} from "@/fixtures/raids";
 import {useRandomizeRaid} from "@/composables/useRandomizeRaid";
 import {usePriorities} from "@/composables/usePriorities";
 import {wishlists} from "@/fixtures/whislist";
+import {items} from "@/fixtures/items";
+import {PriorityItem} from "@/types";
 
 const {orderedLoots, raidsCount, runRaidSimulation, itemsCount} = useRandomizeRaid(gnomeregan);
 
+const selectedItem = ref('');
+const results = ref<PriorityItem[]>([]);
 
 const {getPriorityLootTableByItem} = usePriorities(wishlists);
-const lootable = getPriorityLootTableByItem("pulveri-marteau-oscillant");
 
-console.log(lootable);
+watch(() => selectedItem.value, (newValue) => {
+  results.value = getPriorityLootTableByItem(newValue);
+})
+
 
 </script>
 

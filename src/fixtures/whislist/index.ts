@@ -13,8 +13,8 @@ export const wishlists: Wishlist[] = [
     {
         player: 'player 2',
         wish: [
-            "pulveri-marteau-oscillant",
             "bracelets-ornes-en-sombrefer",
+            "pulveri-marteau-oscillant",
             "ceinturon-de-sombre-vision",
             "coupe-tete-supercharge",
             "idole-de-colere"

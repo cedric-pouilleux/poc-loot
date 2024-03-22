@@ -1,6 +1,5 @@
 import {computed, ref} from "vue";
-import type {PriorityStep} from "@/composables/useRandomizeRaid";
-import type {Wishlist} from "@/types";
+import type {PriorityItem, PriorityStep, Wishlist} from "@/types";
 
 export function usePriorities(wishlists: Wishlist[]) {
 
@@ -18,12 +17,6 @@ export function usePriorities(wishlists: Wishlist[]) {
         }
         return tab;
     });
-
-    type PriorityItem = {
-        player: string;
-        priority: number;
-        itemKey: string;
-    }
 
     function getPriorityLootTableByItem(item: string): PriorityItem[] {
         let priority = 1;

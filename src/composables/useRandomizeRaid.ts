@@ -6,11 +6,6 @@ function getRandomInt(max) {
     return Math.floor(Math.random() * max);
 }
 
-export type PriorityStep = {
-    itemKey: string;
-    playerName: string;
-}
-
 export function useRandomizeRaid(raid: Raid) {
     const orderedLoots = ref<OrderedLootTable[]>([]);
     const raidsCount = ref<number>(0);
