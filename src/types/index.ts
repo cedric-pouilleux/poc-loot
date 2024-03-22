@@ -9,6 +9,8 @@ export type Item = {
     type: string
 }
 
+export type ItemName = "transfigurateur-de-trogg-3000" | "ceinture-de-decoction-volatile";
+
 export type MobItem = ref<Array<string | number>[]>
 
 export type Player = {
@@ -17,7 +19,7 @@ export type Player = {
 }
 
 export type PriorityStep = {
-    itemKey: string;
+    itemKey?: string;
     playerName: string;
 }
 
@@ -27,7 +29,7 @@ export type PriorityItem = {
     itemKey: string;
 }
 
-export type Wish = string[];
+export type Wish = (string | null)[];
 
 export type Wishlist = {
     player: string;

@@ -1,7 +1,7 @@
 import {describe, expect, it} from "vitest";
 import {usePriorities} from "@/composables/usePriorities";
 
-describe('', () => {
+describe('usePriorities composable', () => {
 
     it('Should return one result with first position', () => {
         const {getPriorityLootTableByItem} = usePriorities([
@@ -64,6 +64,34 @@ describe('', () => {
         ]);
         const test = getPriorityLootTableByItem("bracelets-ornes-en-sombrefer");
         expect(test).toHaveLength(2);
+    });
+
+    it('Should return 3 results', () => {
+        const {getPriorityLootTableByItem} = usePriorities([
+            {
+                player: 'player1',
+                wish: [
+                    "bracelets-ornes-en-sombrefer",
+                    "coupe-tete-supercharge",
+                ],
+            },
+            {
+                player: 'player2',
+                wish: [
+                    "bracelets-ornes-en-sombrefer",
+                    "ceinturon-de-sombre-vision",
+                ],
+            },
+            {
+                player: 'player3',
+                wish: [
+                    "bracelets-ornes-en-sombrefer",
+                    "ceinturon-de-sombre-vision",
+                ],
+            }
+        ]);
+        const test = getPriorityLootTableByItem("bracelets-ornes-en-sombrefer");
+        expect(test).toHaveLength(3);
     });
 
 })

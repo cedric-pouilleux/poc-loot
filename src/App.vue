@@ -1,4 +1,9 @@
 <template>
+
+  <pre>
+    {{ allWishlists }}
+  </pre>
+
   <div>
     <button @click="runRaidSimulation">Simulate next raid</button>
     <p> {{ raidsCount }} total raids</p>
@@ -23,7 +28,10 @@
     </select>
 
     <ul v-if="results.length">
-      <li v-for="result in results" :key="result">{{ result.player }} with {{ result.priority }} priority score</li>
+      <li v-for="result in results" :key="result">
+        {{ result.player }} with {{ result.priority }} priority score
+        <button @click="lootAttribution(result)">Attribuer</button>
+      </li>
     </ul>
     <div v-else>
       Pas de prioritées
@@ -39,17 +47,20 @@ import {useRandomizeRaid} from "@/composables/useRandomizeRaid";
 import {usePriorities} from "@/composables/usePriorities";
 import {wishlists} from "@/fixtures/whislist";
 import {items} from "@/fixtures/items";
-import {PriorityItem} from "@/types";
+import type {ItemName, PriorityItem} from "@/types";
+import {useLootsManager} from "@/composables/useLootsManager";
 
 const {orderedLoots, raidsCount, runRaidSimulation, itemsCount} = useRandomizeRaid(gnomeregan);
 
-const selectedItem = ref('');
+const selectedItem = ref<ItemName>("transfigurateur-de-trogg-3000");
 const results = ref<PriorityItem[]>([]);
 
 const {getPriorityLootTableByItem} = usePriorities(wishlists);
+const {lootAttribution, allWishlists} = useLootsManager(wishlists);
 
 watch(() => selectedItem.value, (newValue) => {
   results.value = getPriorityLootTableByItem(newValue);
+  console.log(results.value);
 })
 
 

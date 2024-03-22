@@ -15,6 +15,7 @@ export const wishlists: Wishlist[] = [
         wish: [
             "bracelets-ornes-en-sombrefer",
             "pulveri-marteau-oscillant",
+            "ceinture-de-decoction-volatile",
             "ceinturon-de-sombre-vision",
             "coupe-tete-supercharge",
             "idole-de-colere"

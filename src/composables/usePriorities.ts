@@ -1,5 +1,5 @@
 import {computed, ref} from "vue";
-import type {PriorityItem, PriorityStep, Wishlist} from "@/types";
+import type {ItemName, PriorityItem, PriorityStep, Wishlist} from "@/types";
 
 export function usePriorities(wishlists: Wishlist[]) {
 
@@ -10,15 +10,16 @@ export function usePriorities(wishlists: Wishlist[]) {
         const tab: Array<PriorityStep>[] = [];
         const currentSize = 4;
         for (let i = 0; i < currentSize; i++) {
-            tab.push(allWishlists.value.map(item => ({
+            const value = allWishlists.value.map(item => ({
                 itemKey: item.wish[i],
                 playerName: item.player,
-            })))
+            }));
+            tab.push(value);
         }
         return tab;
     });
 
-    function getPriorityLootTableByItem(item: string): PriorityItem[] {
+    function getPriorityLootTableByItem(item: ItemName): PriorityItem[] {
         let priority = 1;
         const val: PriorityItem[] = [];
         let itemInPriorityAdded: boolean | number = false;
