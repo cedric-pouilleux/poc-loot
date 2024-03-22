@@ -11,6 +11,18 @@ export type Item = {
 
 export type MobItem = ref<Array<string | number>[]>
 
+export type Player = {
+    name: string;
+    wish: string[];
+}
+
+export type Wish = string[];
+
+export type Wishlist = {
+    player: string;
+    wish: Wish;
+}
+
 export type OrderedLootTable = {
     count: number;
     itemKey: string;

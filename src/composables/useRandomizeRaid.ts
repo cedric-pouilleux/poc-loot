@@ -1,4 +1,4 @@
-import type {OrderedLootTable, Raid} from "@/types";
+import type {Mobs, OrderedLootTable, Raid} from "@/types";
 import {readonly, ref} from 'vue';
 import {items} from "@/fixtures/items";
 
@@ -6,19 +6,31 @@ function getRandomInt(max) {
     return Math.floor(Math.random() * max);
 }
 
+export type PriorityStep = {
+    itemKey: string;
+    playerName: string;
+}
+
 export function useRandomizeRaid(raid: Raid) {
     const orderedLoots = ref<OrderedLootTable[]>([]);
     const raidsCount = ref<number>(0);
     const itemsCount = ref<number>(0);
 
+    function extractLootFromMob(mob: Mobs): string[] {
+        const obj: string[] = [];
+        mob.always && obj.push(mob.always);
+        mob.tokens && obj.push(mob.tokens[getRandomInt(mob.tokens.length)][0]);
+        mob.epic && obj.push(mob.epic[getRandomInt(mob.epic.length)][0]);
+        obj.push(mob.items[getRandomInt(mob.items.length)][0]);
+        obj.push(mob.items[getRandomInt(mob.items.length)][0]);
+        return obj;
+    }
+
     function generateTotalLoot() {
         const loots = [];
         raid.mobs.forEach(mob => {
-            mob.always && loots.push(mob.always);
-            mob.tokens && loots.push(mob.tokens[getRandomInt(mob.tokens.length)][0]);
-            mob.epic && loots.push(mob.epic[getRandomInt(mob.epic.length)][0]);
-            loots.push(mob.items[getRandomInt(mob.items.length)][0]);
-            loots.push(mob.items[getRandomInt(mob.items.length)][0]);
+            const mobLoot = extractLootFromMob(mob);
+            loots.push(...mobLoot);
         });
         return loots;
     }

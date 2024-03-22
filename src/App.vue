@@ -20,8 +20,17 @@
 <script lang="ts" setup>
 import {gnomeregan} from "@/fixtures/raids";
 import {useRandomizeRaid} from "@/composables/useRandomizeRaid";
+import {usePriorities} from "@/composables/usePriorities";
+import {wishlists} from "@/fixtures/whislist";
 
 const {orderedLoots, raidsCount, runRaidSimulation, itemsCount} = useRandomizeRaid(gnomeregan);
+
+
+const {getPriorityLootTableByItem} = usePriorities(wishlists);
+const lootable = getPriorityLootTableByItem("pulveri-marteau-oscillant");
+
+console.log(lootable);
+
 </script>
 
 <style scoped>

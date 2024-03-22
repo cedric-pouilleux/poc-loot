@@ -2,7 +2,7 @@ import {readonly} from "vue";
 import Slugify from 'slugify';
 import parse from "node-html-parser";
 import type {Item} from "@/types";
- 
+
 type ItemList = Record<string, Item>;
 
 /**
@@ -10,6 +10,7 @@ type ItemList = Record<string, Item>;
  * @param domString Exemple "<div>test</div>"
  * @param domQuery Selector for all extract elements
  */
+
 export function useWowHeadTableExtractData(domString: string, domQuery: string = '.listview-row') {
     const root = parse(domString);
     const extractedData = root.querySelectorAll(domQuery).map((item) => {
