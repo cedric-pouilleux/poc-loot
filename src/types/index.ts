@@ -1,4 +1,5 @@
 import {ref} from "vue";
+import {items} from "@/fixtures/items";
 
 export type Item = {
     id: number,
@@ -9,8 +10,6 @@ export type Item = {
     type: string
 }
 
-export type ItemName = "transfigurateur-de-trogg-3000" | "ceinture-de-decoction-volatile";
-
 export type MobItem = ref<Array<string | number>[]>
 
 export type Player = {
@@ -18,8 +17,11 @@ export type Player = {
     wish: string[];
 }
 
+// Generate enum from items for DX
+export type ItemName = keyof typeof items;
+
 export type PriorityStep = {
-    itemKey?: string;
+    itemKey: string | null;
     playerName: string;
 }
 

@@ -1,16 +1,14 @@
-import {computed, ref} from "vue";
+import type {ComputedRef} from "vue";
+import {computed} from "vue";
 import type {ItemName, PriorityItem, PriorityStep, Wishlist} from "@/types";
 
-export function usePriorities(wishlists: Wishlist[]) {
-
-    // TODO => Ensure reactive wishlist
-    const allWishlists = ref<Wishlist[]>(wishlists);
+export function usePriorities(wishlists: ComputedRef<Wishlist[]>) {
 
     const sortedPriorityLoots = computed((): Array<PriorityStep>[] => {
         const tab: Array<PriorityStep>[] = [];
-        const currentSize = 4;
+        const currentSize = 6;
         for (let i = 0; i < currentSize; i++) {
-            const value = allWishlists.value.map(item => ({
+            const value = wishlists.value.map(item => ({
                 itemKey: item.wish[i],
                 playerName: item.player,
             }));

@@ -1,10 +1,11 @@
+import {computed} from "vue";
 import {describe, expect, it} from "vitest";
 import {usePriorities} from "@/composables/usePriorities";
 
 describe('usePriorities composable', () => {
 
     it('Should return one result with first position', () => {
-        const {getPriorityLootTableByItem} = usePriorities([
+        const {getPriorityLootTableByItem} = usePriorities(computed(() => [
             {
                 player: 'player1',
                 wish: [
@@ -19,13 +20,13 @@ describe('usePriorities composable', () => {
                     "ceinturon-de-sombre-vision",
                 ],
             }
-        ]);
+        ]));
         const test = getPriorityLootTableByItem("bracelets-ornes-en-sombrefer");
         expect(test).toHaveLength(1);
     });
 
     it('Should return one result with random position', () => {
-        const {getPriorityLootTableByItem} = usePriorities([
+        const {getPriorityLootTableByItem} = usePriorities(computed(() => [
             {
                 player: 'player1',
                 wish: [
@@ -40,13 +41,13 @@ describe('usePriorities composable', () => {
                     "ceinturon-de-sombre-vision",
                 ],
             }
-        ]);
+        ]));
         const test = getPriorityLootTableByItem("ceinturon-de-sombre-vision");
         expect(test).toHaveLength(1);
     });
 
     it('Should return 2 results', () => {
-        const {getPriorityLootTableByItem} = usePriorities([
+        const {getPriorityLootTableByItem} = usePriorities(computed(() => [
             {
                 player: 'player1',
                 wish: [
@@ -61,13 +62,13 @@ describe('usePriorities composable', () => {
                     "ceinturon-de-sombre-vision",
                 ],
             }
-        ]);
+        ]));
         const test = getPriorityLootTableByItem("bracelets-ornes-en-sombrefer");
         expect(test).toHaveLength(2);
     });
 
     it('Should return 3 results', () => {
-        const {getPriorityLootTableByItem} = usePriorities([
+        const {getPriorityLootTableByItem} = usePriorities(computed(() => [
             {
                 player: 'player1',
                 wish: [
@@ -89,7 +90,7 @@ describe('usePriorities composable', () => {
                     "ceinturon-de-sombre-vision",
                 ],
             }
-        ]);
+        ]));
         const test = getPriorityLootTableByItem("bracelets-ornes-en-sombrefer");
         expect(test).toHaveLength(3);
     });

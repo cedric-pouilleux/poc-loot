@@ -17,7 +17,7 @@ export const wishlists: Wishlist[] = [
             "pulveri-marteau-oscillant",
             "ceinture-de-decoction-volatile",
             "ceinturon-de-sombre-vision",
-            "coupe-tete-supercharge",
+            "reactivateur-dhyperflux-electromagnetique",
             "idole-de-colere"
         ],
     }

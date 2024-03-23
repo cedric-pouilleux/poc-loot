@@ -1,20 +1,18 @@
-import {readonly, ref} from "vue";
+import type {ComputedRef} from "vue";
 import type {PriorityItem, Wishlist} from "@/types";
 
-export function useLootsManager(wishlists: Wishlist[]) {
-    const wishlist = ref(wishlists);
+export function useLootsManager(wishlists: ComputedRef<Wishlist[]>) {
 
-    function lootAttribution(playerItem: PriorityItem) {
-        wishlist.value.find((item, index) => {
+    function editPlayerWishlist(playerItem: PriorityItem): void {
+        wishlists.value.find((item, wishlistIndex) => {
             if (item.player === playerItem.player) {
-                wishlist.value[index].wish[0] = null;
+                const wishId = wishlists.value[wishlistIndex].wish.findIndex(i => i === playerItem.itemKey);
+                wishlists.value[wishlistIndex].wish[wishId] = null;
             }
         });
-        console.log(wishlist.value);
     }
 
     return {
-        allWishlists: readonly(wishlist),
-        lootAttribution
+        editPlayerWishlist
     }
 }

@@ -1,17 +1,23 @@
-import type {Mobs, OrderedLootTable, Raid} from "@/types";
+import type {Mobs, OrderedLootTable, Raid, Wishlist} from "@/types";
+import type {ComputedRef} from 'vue';
 import {readonly, ref} from 'vue';
 import {items} from "@/fixtures/items";
+import {usePriorities} from "@/composables/usePriorities";
+import {useLootsManager} from "@/composables/useLootsManager";
 
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
 }
 
-export function useRandomizeRaid(raid: Raid) {
+export function useRandomizeRaid(raid: Raid, wishlist: ComputedRef<Wishlist[]>) {
     const orderedLoots = ref<OrderedLootTable[]>([]);
     const raidsCount = ref<number>(0);
     const itemsCount = ref<number>(0);
 
-    function extractLootFromMob(mob: Mobs): string[] {
+    const {getPriorityLootTableByItem} = usePriorities(wishlist);
+    const {editPlayerWishlist} = useLootsManager(wishlist);
+
+    function extractMobLoot(mob: Mobs): string[] {
         const obj: string[] = [];
         mob.always && obj.push(mob.always);
         mob.tokens && obj.push(mob.tokens[getRandomInt(mob.tokens.length)][0]);
@@ -24,7 +30,16 @@ export function useRandomizeRaid(raid: Raid) {
     function generateTotalLoot() {
         const loots = [];
         raid.mobs.forEach(mob => {
-            const mobLoot = extractLootFromMob(mob);
+            const mobLoot = extractMobLoot(mob);
+            mobLoot.forEach(item => {
+                const loot = getPriorityLootTableByItem(item);
+                if (loot.length) {
+                    const random = getRandomInt(loot.length);
+                    console.info(`${loot[random].player} win ${loot[random].itemKey} with ${loot[random].priority} priority`);
+                    editPlayerWishlist(loot[loot.length > 1 ? random : 0]);
+                }
+            })
+            // attributeLoot();
             loots.push(...mobLoot);
         });
         return loots;
