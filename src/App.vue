@@ -1,7 +1,7 @@
 <template>
 
   <pre>
-    {{ wish }}
+    {{ wishlists }}
   </pre>
 
   <div>
@@ -41,32 +41,35 @@
 </template>
 
 <script lang="ts" setup>
-import {computed, ref, watch} from 'vue';
+import {ref, watch} from 'vue';
 import {gnomeregan} from "@/fixtures/raids";
 import {useRandomizeRaid} from "@/composables/useRandomizeRaid";
 // import {usePriorities} from "@/composables/usePriorities";
-import {wishlistsFixtures} from "@/fixtures/whislist";
 import {items} from "@/fixtures/items";
 import type {ItemName, PriorityItem} from "@/types";
-import {useLootsManager} from "@/composables/useLootsManager";
+import {useWishlists} from "@/stores/wishlists.store";
+import {storeToRefs} from "pinia";
 
-const wish = ref(wishlistsFixtures);
+const wishlistStore = useWishlists();
+const {wishlists} = storeToRefs(wishlistStore);
+
 
 const {
   orderedLoots,
   raidsCount,
   runRaidSimulation,
   itemsCount
-} = useRandomizeRaid(gnomeregan, computed(() => wish.value));
+} = useRandomizeRaid(gnomeregan);
+
 
 // const {getPriorityLootTableByItem} = usePriorities(computed(() => wish.value));
-const {editPlayerWishlist} = useLootsManager(computed(() => wish.value));
 
 const selectedItem = ref<ItemName>();
 const results = ref<PriorityItem[]>([]);
 
 function handleLootAttribution(item: PriorityItem) {
-  editPlayerWishlist(item);
+  console.log(wishlistStore);
+  // wishlistStore.removeItemFromWishlist(item);
   // results.value = getPriorityLootTableByItem(selectedItem.value);
 }
 

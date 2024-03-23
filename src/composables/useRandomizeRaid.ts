@@ -1,22 +1,20 @@
-import type {Mobs, OrderedLootTable, Raid, Wishlist} from "@/types";
-import type {ComputedRef} from 'vue';
+import type {Mobs, OrderedLootTable, Raid} from "@/types";
 import {readonly, ref} from 'vue';
 import {items} from "@/fixtures/items";
-import {useLootsManager} from "@/composables/useLootsManager";
 import {useWishlists} from "@/stores/wishlists.store";
+import {storeToRefs} from "pinia";
 
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
 }
 
-export function useRandomizeRaid(raid: Raid, wishlist: ComputedRef<Wishlist[]>) {
+export function useRandomizeRaid(raid: Raid) {
     const orderedLoots = ref<OrderedLootTable[]>([]);
     const raidsCount = ref<number>(0);
     const itemsCount = ref<number>(0);
 
     const wishlistStore = useWishlists();
-
-    const {editPlayerWishlist} = useLootsManager(wishlist);
+    const {wishlists} = storeToRefs(wishlistStore);
 
     function extractMobLoot(mob: Mobs): string[] {
         const obj: string[] = [];
@@ -37,7 +35,7 @@ export function useRandomizeRaid(raid: Raid, wishlist: ComputedRef<Wishlist[]>) 
                 if (loot.length) {
                     const random = getRandomInt(loot.length);
                     console.info(`${loot[random].player} win ${loot[random].itemKey} with ${loot[random].priority} priority`);
-                    editPlayerWishlist(loot[loot.length > 1 ? random : 0]);
+                    wishlistStore.removeItemFromWishlist(loot[loot.length > 1 ? random : 0]);
                 }
             })
             loots.push(...mobLoot);
@@ -47,10 +45,12 @@ export function useRandomizeRaid(raid: Raid, wishlist: ComputedRef<Wishlist[]>) 
 
     function runRaidSimulation() {
         const loots = generateTotalLoot();
-        itemsCount.value += loots.length;
+        itemsCount.value += loots.length - 1;
         loots.forEach(item => {
             const exist = orderedLoots.value.findIndex(loot => loot.itemKey === item);
             if (exist !== -1) {
+                console.log(exist, item);
+                console.log(orderedLoots.value[exist]);
                 orderedLoots.value[exist].count++;
             } else {
                 orderedLoots.value.push({

@@ -1,15 +1,16 @@
+import {computed, ref} from "vue";
 import {defineStore} from 'pinia'
 import {wishlistsFixtures} from "@/fixtures/whislist";
-import {computed, readonly, ref} from "vue";
-import type {ItemName, PriorityItem, PriorityStep} from "@/types";
+import type {ItemName, PriorityItem, PriorityStep, Wishlist} from "@/types";
 
 export const useWishlists = defineStore('wishlists', () => {
-    const wishlists = ref(wishlistsFixtures);
-    const deepPrioritySearch = ref<number>(0);
+    const wishlists = ref<Wishlist[]>(wishlistsFixtures);
+
+    const getMaxPriorityDeep = computed(() => Math.max(...wishlists.value.map(list => list.wish.length)));
 
     const sortLootByPriority = computed((): Array<PriorityStep>[] => {
         const tab: Array<PriorityStep>[] = [];
-        for (let i = 0; i < deepPrioritySearch.value; i++) {
+        for (let i = 0; i < getMaxPriorityDeep.value; i++) {
             const value = wishlists.value.map(item => ({
                 itemKey: item.wish[i],
                 playerName: item.player,
@@ -18,6 +19,15 @@ export const useWishlists = defineStore('wishlists', () => {
         }
         return tab;
     });
+
+    function removeItemFromWishlist(playerItem: PriorityItem): void {
+        wishlists.value.find((item, wishlistIndex) => {
+            if (item.player === playerItem.player) {
+                const wishId = wishlists.value[wishlistIndex].wish.findIndex(i => i === playerItem.itemKey);
+                wishlists.value[wishlistIndex].wish[wishId] = null;
+            }
+        });
+    }
 
     function generateMapByPriority(item: ItemName): PriorityItem[] {
         let priority = 1;
@@ -41,7 +51,9 @@ export const useWishlists = defineStore('wishlists', () => {
     }
 
     return {
-        wishlists: readonly(wishlists),
-        generateMapByPriority
+        wishlists,
+        generateMapByPriority,
+        removeItemFromWishlist,
+        getMaxPriorityDeep
     }
 })
