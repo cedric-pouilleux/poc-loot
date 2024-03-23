@@ -1,7 +1,7 @@
 <template>
 
   <pre>
-    {{ wish }} 
+    {{ wish }}
   </pre>
 
   <div>
@@ -44,13 +44,13 @@
 import {computed, ref, watch} from 'vue';
 import {gnomeregan} from "@/fixtures/raids";
 import {useRandomizeRaid} from "@/composables/useRandomizeRaid";
-import {usePriorities} from "@/composables/usePriorities";
-import {wishlists} from "@/fixtures/whislist";
+// import {usePriorities} from "@/composables/usePriorities";
+import {wishlistsFixtures} from "@/fixtures/whislist";
 import {items} from "@/fixtures/items";
 import type {ItemName, PriorityItem} from "@/types";
 import {useLootsManager} from "@/composables/useLootsManager";
 
-const wish = ref(wishlists);
+const wish = ref(wishlistsFixtures);
 
 const {
   orderedLoots,
@@ -58,7 +58,8 @@ const {
   runRaidSimulation,
   itemsCount
 } = useRandomizeRaid(gnomeregan, computed(() => wish.value));
-const {getPriorityLootTableByItem} = usePriorities(computed(() => wish.value));
+
+// const {getPriorityLootTableByItem} = usePriorities(computed(() => wish.value));
 const {editPlayerWishlist} = useLootsManager(computed(() => wish.value));
 
 const selectedItem = ref<ItemName>();
@@ -66,12 +67,12 @@ const results = ref<PriorityItem[]>([]);
 
 function handleLootAttribution(item: PriorityItem) {
   editPlayerWishlist(item);
-  results.value = getPriorityLootTableByItem(selectedItem.value);
+  // results.value = getPriorityLootTableByItem(selectedItem.value);
 }
 
 watch(() => selectedItem.value, (newValue) => {
-  results.value = getPriorityLootTableByItem(newValue);
-  console.log(results.value);
+  // results.value = getPriorityLootTableByItem(newValue);
+  // console.log(results.value);
 })
 
 

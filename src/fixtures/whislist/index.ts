@@ -1,6 +1,6 @@
 import type {Wishlist} from "@/types";
 
-export const wishlists: Wishlist[] = [
+export const wishlistsFixtures: Wishlist[] = [
     {
         player: 'player 1',
         wish: [

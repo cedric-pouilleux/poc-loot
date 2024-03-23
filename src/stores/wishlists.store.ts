@@ -1,13 +1,15 @@
-import type {ComputedRef} from "vue";
-import {computed} from "vue";
-import type {ItemName, PriorityItem, PriorityStep, Wishlist} from "@/types";
+import {defineStore} from 'pinia'
+import {wishlistsFixtures} from "@/fixtures/whislist";
+import {computed, readonly, ref} from "vue";
+import type {ItemName, PriorityItem, PriorityStep} from "@/types";
 
-export function usePriorities(wishlists: ComputedRef<Wishlist[]>) {
+export const useWishlists = defineStore('wishlists', () => {
+    const wishlists = ref(wishlistsFixtures);
+    const deepPrioritySearch = ref<number>(0);
 
-    const sortedPriorityLoots = computed((): Array<PriorityStep>[] => {
+    const sortLootByPriority = computed((): Array<PriorityStep>[] => {
         const tab: Array<PriorityStep>[] = [];
-        const currentSize = 6;
-        for (let i = 0; i < currentSize; i++) {
+        for (let i = 0; i < deepPrioritySearch.value; i++) {
             const value = wishlists.value.map(item => ({
                 itemKey: item.wish[i],
                 playerName: item.player,
@@ -17,11 +19,11 @@ export function usePriorities(wishlists: ComputedRef<Wishlist[]>) {
         return tab;
     });
 
-    function getPriorityLootTableByItem(item: ItemName): PriorityItem[] {
+    function generateMapByPriority(item: ItemName): PriorityItem[] {
         let priority = 1;
         const val: PriorityItem[] = [];
         let itemInPriorityAdded: boolean | number = false;
-        sortedPriorityLoots.value.every(loots => {
+        sortLootByPriority.value.every(loots => {
             loots.find(loot => {
                 if (loot.itemKey === item) {
                     val.push({
@@ -39,6 +41,7 @@ export function usePriorities(wishlists: ComputedRef<Wishlist[]>) {
     }
 
     return {
-        getPriorityLootTableByItem,
+        wishlists: readonly(wishlists),
+        generateMapByPriority
     }
-}
+})
