@@ -1,0 +1,22 @@
+export const slots = new Map([
+    ["bijou", {"id": 83, "title": "Bijou"}],
+    ["taille", {"id": 65, "title": "Taille"}],
+    ["mains", {"id": 67, "title": "Mains"}],
+    ["relique", {"id": 14, "title": "Relique"}],
+    ["tenue-en-main-gauche", {"id": 31, "title": "Tenu(e) en main gauche"}],
+    ["epaule", {"id": 71, "title": "Epaule"}],
+    ["bouclier", {"id": 38, "title": "Bouclier"}],
+    ["pieds", {"id": 55, "title": "Pieds"}],
+    ["dos", {"id": 68, "title": "Dos"}],
+    ["a-distance", {"id": 82, "title": "À distance"}],
+    ["main-droite", {"id": 78, "title": "Main droite"}],
+    ["deux-mains", {"id": 81, "title": "Deux mains"}],
+    ["jambes", {"id": 56, "title": "Jambes"}],
+    ["poignets", {"id": 62, "title": "Poignets"}],
+    ["a-une-main", {"id": 59, "title": "À une main"}],
+    ["main-gauche", {"id": 29, "title": "Main gauche"}],
+    ["torse", {"id": 54, "title": "Torse"}],
+    ["doigt", {"id": 80, "title": "Doigt"}],
+    ["tete", {"id": 84, "title": "Tête"}],
+    ["cou", {"id": 72, "title": "Cou"}]
+]);

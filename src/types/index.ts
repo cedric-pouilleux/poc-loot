@@ -1,11 +1,16 @@
 import {ref} from "vue";
 
+type Slot = {
+    id: number,
+    title: string,
+}
+
 export type Item = {
     id: number,
     title: string,
     img: string,
     link: string,
-    slot: string,
+    slot: Slot,
     type: string
 }
 

@@ -12,7 +12,6 @@ export const disperserDeFoule: Mobs = {
         ["garde-mains-de-maestro-des-marrons", 16],
         ["plaques-depaule-usinees-en-alliage", 16],
         ["stabilisateurs-de-visee-experimentaux", 15],
-        ["rapetisseur-de-monde", 14],
         ["roueur-automatiquechaman-druide-paladin", 14],
         ["bouclier-de-securite-dielectrique", 14],
     ]

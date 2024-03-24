@@ -1,6 +1,6 @@
 import type {ItemName, Mobs, OrderedLootTable, Raid} from "@/types";
 import {readonly, ref} from 'vue';
-import {items} from "@/fixtures/items";
+import {items} from "@/fixtures/items/itemsFixtures";
 import {useWishlists} from "@/stores/wishlists.store";
 import {getRandomInt} from "@/utils";
 

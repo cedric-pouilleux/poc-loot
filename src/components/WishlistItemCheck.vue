@@ -20,7 +20,7 @@
 
 <script lang="ts" setup>
 import {ref, watch} from 'vue';
-import {items} from "@/fixtures/items";
+import {items} from "@/fixtures/items/itemsFixtures";
 import {PriorityItem} from "@/types";
 
 const selectedItem = ref();

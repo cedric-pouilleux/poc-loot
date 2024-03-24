@@ -1,10 +1,11 @@
 import type {Item} from "@/types";
+import {slots} from "@/fixtures/items/slotsFixtures";
 
 export const items: Record<string, Item> = {
     "transfigurateur-de-trogg-3000": {
         "img": "https://wow.zamimg.com/images/wow/icons/medium/inv_misc_enggizmos_15.jpg",
         "link": "https://www.wowhead.com/classic/fr/item=215437/transfigurateur-de-trogg-3000",
-        "slot": "Bijou",
+        "slot": slots.get('bijou'),
         "title": "Transfigurateur de trogg 3000",
         "type": "Bijou",
         "id": 215437
@@ -12,7 +13,7 @@ export const items: Record<string, Item> = {
     "ceinture-de-decoction-volatile": {
         "img": "https://wow.zamimg.com/images/wow/icons/medium/inv_belt_07.jpg",
         "link": "https://www.wowhead.com/classic/fr/item=213321/ceinture-de-décoction-volatile",
-        "slot": "Taille",
+        "slot": slots.get('taille'),
         "title": "Ceinture de décoction volatile",
         "type": "Armures en tissu",
         "id": 213321
@@ -20,7 +21,7 @@ export const items: Record<string, Item> = {
     "corde-de-la-terre-profonde": {
         "img": "https://wow.zamimg.com/images/wow/icons/medium/inv_belt_12.jpg",
         "link": "https://www.wowhead.com/classic/fr/item=213323/corde-de-la-terre-profonde",
-        "slot": "Taille",
+        "slot": slots.get("taille"),
         "title": "Corde de la terre profonde",
         "type": "Armures en cuir",
         "id": 213323
@@ -28,7 +29,7 @@ export const items: Record<string, Item> = {
     "gantelets-crasseux-de-grubbis": {
         "img": "https://wow.zamimg.com/images/wow/icons/medium/inv_gauntlets_17.jpg",
         "link": "https://www.wowhead.com/classic/fr/item=213288/gantelets-crasseux-de-grubbis",
-        "slot": "Mains",
+        "slot": slots.get("mains"),
         "title": "Gantelets crasseux de Grubbis",
         "type": "Armures en plaques",
         "id": 213288
@@ -36,7 +37,7 @@ export const items: Record<string, Item> = {
     "idole-de-colere": {
         "img": "https://wow.zamimg.com/images/wow/icons/medium/inv_relics_idolofrejuvenation.jpg",
         "link": "https://www.wowhead.com/classic/fr/item=216490/idole-de-colère",
-        "slot": "Relique",
+        "slot": slots.get("relique"),
         "title": "Idole de colère",
         "type": "Idole",
         "id": 216490
@@ -44,7 +45,7 @@ export const items: Record<string, Item> = {
     "le-necro-gnomicon": {
         "img": "https://wow.zamimg.com/images/wow/icons/medium/inv_misc_book_05.jpg",
         "link": "https://www.wowhead.com/classic/fr/item=213542/le-nécro-gnomicon",
-        "slot": "Tenu(e) en main gauche",
+        "slot": slots.get("tenue-en-main-gauche"),
         "title": "Le Nécro-Gnomicon",
         "type": "Accessoire pour main gauche",
         "id": 213542
@@ -52,7 +53,7 @@ export const items: Record<string, Item> = {
     "baudrier-darnaque": {
         "img": "https://wow.zamimg.com/images/wow/icons/medium/inv_belt_12.jpg",
         "link": "https://www.wowhead.com/classic/fr/item=213322/baudrier-d-arnaque",
-        "slot": "Taille",
+        "slot": slots.get('taille'),
         "title": "Baudrier d’arnaque",
         "type": "Armures en cuir",
         "id": 213322
@@ -60,7 +61,7 @@ export const items: Record<string, Item> = {
     "espauliers-de-tuerie-de-troggs": {
         "img": "https://wow.zamimg.com/images/wow/icons/medium/inv_shoulder_18.jpg",
         "link": "https://www.wowhead.com/classic/fr/item=213304/espauliers-de-tuerie-de-troggs",
-        "slot": "Epaule",
+        "slot": slots.get("epaule"),
         "title": "Espauliers de tuerie de Troggs",
         "type": "Armures en mailles",
         "id": 213304
@@ -68,7 +69,7 @@ export const items: Record<string, Item> = {
     "grand-bouclier-irradie": {
         "img": "https://wow.zamimg.com/images/wow/icons/medium/inv_misc_ticket_tarot_twistingnether_01.jpg",
         "link": "https://www.wowhead.com/classic/fr/item=213351/grand-bouclier-irradié",
-        "slot": "Bouclier",
+        "slot": slots.get("bouclier"),
         "title": "Grand bouclier irradié",
         "type": "Bouclier",
         "id": 213351
@@ -76,7 +77,7 @@ export const items: Record<string, Item> = {
     "solerets-des-basses-cavernes": {
         "img": "https://wow.zamimg.com/images/wow/icons/medium/inv_boots_01.jpg",
         "link": "https://www.wowhead.com/classic/fr/item=213294/solerets-des-basses-cavernes",
-        "slot": "Pieds",
+        "slot": slots.get("pieds"),
         "title": "Solerets des Basses-Cavernes",
         "type": "Armures en plaques",
         "id": 213294
@@ -84,7 +85,7 @@ export const items: Record<string, Item> = {
     "ceinture-du-trogg-berserker": {
         "img": "https://wow.zamimg.com/images/wow/icons/medium/inv_belt_14.jpg",
         "link": "https://www.wowhead.com/classic/fr/item=213327/ceinture-du-trogg-berserker",
-        "slot": "Taille",
+        "slot": slots.get('taille'),
         "title": "Ceinture du Trogg berserker",
         "type": "Armures en plaques",
         "id": 213327
@@ -92,7 +93,7 @@ export const items: Record<string, Item> = {
     "libram-de-benediction": {
         "img": "https://wow.zamimg.com/images/wow/icons/medium/inv_misc_book_13.jpg",
         "link": "https://www.wowhead.com/classic/fr/item=215435/libram-de-bénédiction",
-        "slot": "Relique",
+        "slot": slots.get("relique"),
         "title": "Libram de bénédiction",
         "type": "Libram",
         "id": 215435
@@ -100,7 +101,7 @@ export const items: Record<string, Item> = {
     "ceinturon-de-recuperation": {
         "img": "https://wow.zamimg.com/images/wow/icons/medium/inv_belt_14.jpg",
         "link": "https://www.wowhead.com/classic/fr/item=213326/ceinturon-de-récupération",
-        "slot": "Taille",
+        "slot": slots.get('taille'),
         "title": "Ceinturon de récupération",
         "type": "Armures en plaques",
         "id": 213326
@@ -108,7 +109,7 @@ export const items: Record<string, Item> = {
     "corde-cintree-electromagnetique": {
         "img": "https://wow.zamimg.com/images/wow/icons/medium/inv_belt_35.jpg",
         "link": "https://www.wowhead.com/classic/fr/item=213324/corde-cintrée-électromagnétique",
-        "slot": "Taille",
+        "slot": slots.get('taille'),
         "title": "Corde cintrée électromagnétique",
         "type": "Armures en mailles",
         "id": 213324
@@ -116,7 +117,7 @@ export const items: Record<string, Item> = {
     "totem-de-flamme-revigorante": {
         "img": "https://wow.zamimg.com/images/wow/icons/medium/spell_nature_agitatingtotem.jpg",
         "link": "https://www.wowhead.com/classic/fr/item=215436/totem-de-flamme-revigorante",
-        "slot": "Relique",
+        "slot": slots.get("relique"),
         "title": "Totem de flamme revigorante",
         "type": "Totem",
         "id": 215436
@@ -124,7 +125,7 @@ export const items: Record<string, Item> = {
     "drape-de-demantelement": {
         "img": "https://wow.zamimg.com/images/wow/icons/medium/inv_misc_cape_14.jpg",
         "link": "https://www.wowhead.com/classic/fr/item=213307/drapé-de-démantèlement",
-        "slot": "Dos",
+        "slot": slots.get("dos"),
         "title": "Drapé de démantèlement",
         "type": "Cape",
         "id": 213307
@@ -132,7 +133,7 @@ export const items: Record<string, Item> = {
     "aiguillon-de-falco": {
         "img": "https://wow.zamimg.com/images/wow/icons/medium/inv_weapon_crossbow_04.jpg",
         "link": "https://www.wowhead.com/classic/fr/item=213355/aiguillon-de-falco",
-        "slot": "À distance",
+        "slot": slots.get("a-distance"),
         "title": "Aiguillon de Falco",
         "type": "Arbalète",
         "id": 213355
@@ -140,7 +141,7 @@ export const items: Record<string, Item> = {
     "grace-de-soigne-pignon": {
         "img": "https://wow.zamimg.com/images/wow/icons/medium/inv_gizmo_02.jpg",
         "link": "https://www.wowhead.com/classic/fr/item=213352/grâce-de-soigne-pignon",
-        "slot": "Main droite",
+        "slot": slots.get("main-droite"),
         "title": "Grâce de soigne-pignon",
         "type": "Masse à une main",
         "id": 213352
@@ -148,7 +149,7 @@ export const items: Record<string, Item> = {
     "hydrobaton": {
         "img": "https://wow.zamimg.com/images/wow/icons/medium/inv_staff_15.jpg",
         "link": "https://www.wowhead.com/classic/fr/item=213289/hydrobâton",
-        "slot": "Deux mains",
+        "slot": slots.get("deux-mains"),
         "title": "Hydrobâton",
         "type": "Bâton",
         "id": 213289
@@ -156,7 +157,7 @@ export const items: Record<string, Item> = {
     "godillots-acides": {
         "img": "https://wow.zamimg.com/images/wow/icons/medium/inv_boots_05.jpg",
         "link": "https://www.wowhead.com/classic/fr/item=213290/godillots-acides",
-        "slot": "Pieds",
+        "slot": slots.get("pieds"),
         "title": "Godillots acides",
         "type": "Armures en tissu",
         "id": 213290
@@ -164,7 +165,7 @@ export const items: Record<string, Item> = {
     "mantelet-de-negociation-rusee": {
         "img": "https://wow.zamimg.com/images/wow/icons/medium/inv_shoulder_19.jpg",
         "link": "https://www.wowhead.com/classic/fr/item=213302/mantelet-de-négociation-rusée",
-        "slot": "Epaule",
+        "slot": slots.get("epaule"),
         "title": "Mantelet de négociation rusée",
         "type": "Armures en cuir",
         "id": 213302
@@ -172,7 +173,7 @@ export const items: Record<string, Item> = {
     "pantalon-petrolifere": {
         "img": "https://wow.zamimg.com/images/wow/icons/medium/inv_pants_08.jpg",
         "link": "https://www.wowhead.com/classic/fr/item=213299/pantalon-pétrolifère",
-        "slot": "Jambes",
+        "slot": slots.get("jambes"),
         "title": "Pantalon pétrolifère",
         "type": "Armures en cuir",
         "id": 213299
@@ -180,7 +181,7 @@ export const items: Record<string, Item> = {
     "manchettes-tachees-dhuile-de-lev": {
         "img": "https://wow.zamimg.com/images/wow/icons/medium/inv_misc_bandage_09.jpg",
         "link": "https://www.wowhead.com/classic/fr/item=213285/manchettes-tachées-d-huile-de-lev",
-        "slot": "Poignets",
+        "slot": slots.get("poignets"),
         "title": "Manchettes tachées d’huile de Lev",
         "type": "Armures en tissu",
         "id": 213285
@@ -188,7 +189,7 @@ export const items: Record<string, Item> = {
     "mantelet-synthetique": {
         "img": "https://wow.zamimg.com/images/wow/icons/medium/inv_shoulder_02.jpg",
         "link": "https://www.wowhead.com/classic/fr/item=213301/mantelet-synthétique",
-        "slot": "Epaule",
+        "slot": slots.get("epaule"),
         "title": "Mantelet synthétique",
         "type": "Armures en tissu",
         "id": 213301
@@ -196,7 +197,7 @@ export const items: Record<string, Item> = {
     "baton-de-defibrillation": {
         "img": "https://wow.zamimg.com/images/wow/icons/medium/inv_staff_07.jpg",
         "link": "https://www.wowhead.com/classic/fr/item=213353/bâton-de-défibrillation",
-        "slot": "Deux mains",
+        "slot": slots.get("deux-mains"),
         "title": "Bâton de défibrillation",
         "type": "Bâton",
         "id": 213353
@@ -204,7 +205,7 @@ export const items: Record<string, Item> = {
     "protege-epaules-genereusement-matelasses": {
         "img": "https://wow.zamimg.com/images/wow/icons/medium/inv_shoulder_08.jpg",
         "link": "https://www.wowhead.com/classic/fr/item=213413/protège-épaules-généreusement-matelassés",
-        "slot": "Epaule",
+        "slot": slots.get("epaule"),
         "title": "Protège-épaules généreusement matelassés",
         "type": "Armures en cuir",
         "id": 213413
@@ -212,7 +213,7 @@ export const items: Record<string, Item> = {
     "vengeresse-toxique-ii": {
         "img": "https://wow.zamimg.com/images/wow/icons/medium/inv_weapon_shortblade_02.jpg",
         "link": "https://www.wowhead.com/classic/fr/item=213291/vengeresse-toxique-ii",
-        "slot": "À une main",
+        "slot": slots.get("a-une-main"),
         "title": "Vengeresse toxique II",
         "type": "Dague",
         "id": 213291
@@ -220,7 +221,7 @@ export const items: Record<string, Item> = {
     "tranchoir-bidulotronique": {
         "img": "https://wow.zamimg.com/images/wow/icons/medium/inv_sword_37.jpg",
         "link": "https://www.wowhead.com/classic/fr/item=213292/tranchoir-bidulotronique",
-        "slot": "Deux mains",
+        "slot": slots.get("deux-mains"),
         "title": "Tranchoir bidulotronique",
         "type": "Épée à deux mains",
         "id": 213292
@@ -228,7 +229,7 @@ export const items: Record<string, Item> = {
     "vibrolame-ultrasonique": {
         "img": "https://wow.zamimg.com/images/wow/icons/medium/inv_axe_14.jpg",
         "link": "https://www.wowhead.com/classic/fr/item=213295/vibrolame-ultrasonique",
-        "slot": "À une main",
+        "slot": slots.get("a-une-main"),
         "title": "Vibrolame ultrasonique",
         "type": "Hache à une main",
         "id": 213295
@@ -236,7 +237,7 @@ export const items: Record<string, Item> = {
     "griffe-du-maitre-des-rouages": {
         "img": "https://wow.zamimg.com/images/wow/icons/medium/inv_gauntlets_11.jpg",
         "link": "https://www.wowhead.com/classic/fr/item=213442/griffe-du-maître-des-rouages",
-        "slot": "Main gauche",
+        "slot": slots.get("main-gauche"),
         "title": "Griffe du maître des rouages",
         "type": "Arme de pugilat",
         "id": 213442
@@ -244,7 +245,7 @@ export const items: Record<string, Item> = {
     "macro-ajusteur-gyromatique": {
         "img": "https://wow.zamimg.com/images/wow/icons/medium/inv_spear_05.jpg",
         "link": "https://www.wowhead.com/classic/fr/item=213408/macro-ajusteur-gyromatique",
-        "slot": "Deux mains",
+        "slot": slots.get("deux-mains"),
         "title": "Macro-ajusteur gyromatique",
         "type": "Armes d'hast",
         "id": 213408
@@ -252,7 +253,7 @@ export const items: Record<string, Item> = {
     "manuel-de-reparation-9-60": {
         "img": "https://wow.zamimg.com/images/wow/icons/medium/inv_misc_book_09.jpg",
         "link": "https://www.wowhead.com/classic/fr/item=213419/manuel-de-réparation-9-60",
-        "slot": "Tenu(e) en main gauche",
+        "slot": slots.get("tenue-en-main-gauche"),
         "title": "Manuel de réparation 9-60",
         "type": "Accessoire pour main gauche",
         "id": 213419
@@ -260,7 +261,7 @@ export const items: Record<string, Item> = {
     "bottes-doperation-des-gnomebots": {
         "img": "https://wow.zamimg.com/images/wow/icons/medium/inv_boots_05.jpg",
         "link": "https://www.wowhead.com/classic/fr/item=213340/bottes-d-opération-des-gnomebots",
-        "slot": "Pieds",
+        "slot": slots.get("pieds"),
         "title": "Bottes d’opération des gnomebots",
         "type": "Armures en cuir",
         "id": 213340
@@ -268,7 +269,7 @@ export const items: Record<string, Item> = {
     "couvre-bras-de-bricoleuse": {
         "img": "https://wow.zamimg.com/images/wow/icons/medium/inv_bracer_10.jpg",
         "link": "https://www.wowhead.com/classic/fr/item=213415/couvre-bras-de-bricoleuse",
-        "slot": "Poignets",
+        "slot": slots.get("poignets"),
         "title": "Couvre-bras de bricoleuse",
         "type": "Armures en tissu",
         "id": 213415
@@ -276,7 +277,7 @@ export const items: Record<string, Item> = {
     "garde-mains-de-maestro-des-marrons": {
         "img": "https://wow.zamimg.com/images/wow/icons/medium/inv_gauntlets_26.jpg",
         "link": "https://www.wowhead.com/classic/fr/item=213278/garde-mains-de-maestro-des-marrons",
-        "slot": "Mains",
+        "slot": slots.get("mains"),
         "title": "Garde-mains de maestro des marrons",
         "type": "Armures en cuir",
         "id": 213278
@@ -284,7 +285,7 @@ export const items: Record<string, Item> = {
     "plaques-depaule-usinees-en-alliage": {
         "img": "https://wow.zamimg.com/images/wow/icons/medium/inv_shoulder_29.jpg",
         "link": "https://www.wowhead.com/classic/fr/item=213305/plaques-d-épaule-usinées-en-alliage",
-        "slot": "Epaule",
+        "slot": slots.get("epaule"),
         "title": "Plaques d’épaule usinées en alliage",
         "type": "Armures en plaques",
         "id": 213305
@@ -292,23 +293,15 @@ export const items: Record<string, Item> = {
     "stabilisateurs-de-visee-experimentaux": {
         "img": "https://wow.zamimg.com/images/wow/icons/medium/inv_bracer_16.jpg",
         "link": "https://www.wowhead.com/classic/fr/item=213317/stabilisateurs-de-visée-expérimentaux",
-        "slot": "Poignets",
+        "slot": slots.get("poignets"),
         "title": "Stabilisateurs de visée expérimentaux",
         "type": "Armures en mailles",
         "id": 213317
     },
-    "rapetisseur-de-monde": {
-        "img": "https://wow.zamimg.com/images/wow/icons/medium/inv_misc_enggizmos_09.jpg",
-        "link": "https://www.wowhead.com/classic/fr/item=215449/rapetisseur-de-monde",
-        "slot": "",
-        "title": "Rapetisseur de monde",
-        "type": "Appareil",
-        "id": 215449
-    },
     "roueur-automatiquechaman-druide-paladin": {
         "img": "https://wow.zamimg.com/images/wow/icons/medium/inv_mace_14.jpg",
         "link": "https://www.wowhead.com/classic/fr/item=210741/roueur-automatique",
-        "slot": "Deux mains",
+        "slot": slots.get("deux-mains"),
         "title": "Roueur automatiqueChaman, Druide, Paladin",
         "type": "Masse à deux mains",
         "id": 210741
@@ -316,7 +309,7 @@ export const items: Record<string, Item> = {
     "bouclier-de-securite-dielectrique": {
         "img": "https://wow.zamimg.com/images/wow/icons/medium/trade_engineering.jpg",
         "link": "https://www.wowhead.com/classic/fr/item=213412/bouclier-de-sécurité-diélectrique",
-        "slot": "Bouclier",
+        "slot": slots.get("bouclier"),
         "title": "Bouclier de sécurité diélectrique",
         "type": "Bouclier",
         "id": 213412
@@ -324,7 +317,7 @@ export const items: Record<string, Item> = {
     "power-depleted-boots": {
         "img": "https://wow.zamimg.com/images/wow/icons/medium/inv_gizmo_rocketboot_destroyed_02.jpg",
         "link": "https://www.wowhead.com/classic/item=217007/power-depleted-boots",
-        "slot": "",
+        "slot": slots.get("pieds"),
         "title": "Power Depleted Boots",
         "type": "Junk",
         "id": 217007
@@ -332,7 +325,7 @@ export const items: Record<string, Item> = {
     "power-depleted-chest": {
         "img": "https://wow.zamimg.com/images/wow/icons/medium/inv_chest_chain_16.jpg",
         "link": "https://www.wowhead.com/classic/item=217008/power-depleted-chest",
-        "slot": "",
+        "slot": slots.get("Torse"),
         "title": "Power Depleted Chest",
         "type": "Junk",
         "id": 217008
@@ -340,7 +333,7 @@ export const items: Record<string, Item> = {
     "power-depleted-legs": {
         "img": "https://wow.zamimg.com/images/wow/icons/medium/inv_pants_cloth_20.jpg",
         "link": "https://www.wowhead.com/classic/item=217009/power-depleted-legs",
-        "slot": "",
+        "slot": slots.get("jambes"),
         "title": "Power Depleted Legs",
         "type": "Junk",
         "id": 217009
@@ -348,23 +341,23 @@ export const items: Record<string, Item> = {
     "aragriars-whimsical-world-warper": {
         "img": "https://wow.zamimg.com/images/wow/icons/medium/spell_shadow_demoniccircleteleport.jpg",
         "link": "https://www.wowhead.com/classic/item=216494/aragriars-whimsical-world-warper",
-        "slot": "Trinket",
+        "slot": slots.get("bijou"),
         "title": "Aragriar's Whimsical World Warper",
-        "type": "Trinket",
+        "type": "Bijou",
         "id": 216494
     },
     "electrocutioner-hexnut": {
         "img": "https://wow.zamimg.com/images/wow/icons/medium/inv_misc_gear_04.jpg",
         "link": "https://www.wowhead.com/classic/item=213287/electrocutioner-hexnut",
-        "slot": "Finger",
+        "slot": slots.get("doigt"),
         "title": "Electrocutioner Hexnut",
-        "type": "Ring",
+        "type": "Anneau",
         "id": 213287
     },
     "hi-tech-supergun-mkvii": {
         "img": "https://wow.zamimg.com/images/wow/icons/medium/inv_weapon_rifle_08.jpg",
         "link": "https://www.wowhead.com/classic/item=213293/hi-tech-supergun-mk-vii",
-        "slot": "Ranged",
+        "slot": slots.get("a-distance"),
         "title": "Hi-tech Supergun Mk.VII",
         "type": "Gun",
         "id": 213293
@@ -372,7 +365,7 @@ export const items: Record<string, Item> = {
     "machinists-gloves": {
         "img": "https://wow.zamimg.com/images/wow/icons/medium/inv_gauntlets_23.jpg",
         "link": "https://www.wowhead.com/classic/item=213319/machinists-gloves",
-        "slot": "Hands",
+        "slot": slots.get("mains"),
         "title": "Machinist's Gloves",
         "type": "Leather Armor",
         "id": 213319
@@ -380,7 +373,7 @@ export const items: Record<string, Item> = {
     "mechbuilders-overalls": {
         "img": "https://wow.zamimg.com/images/wow/icons/medium/inv_shirt_14.jpg",
         "link": "https://www.wowhead.com/classic/item=213298/mechbuilders-overalls",
-        "slot": "Chest",
+        "slot": slots.get("Torse"),
         "title": "Mechbuilder's Overalls",
         "type": "Cloth Armor",
         "id": 213298
@@ -388,7 +381,7 @@ export const items: Record<string, Item> = {
     "staff-of-the-evil-genius": {
         "img": "https://wow.zamimg.com/images/wow/icons/medium/inv_staff_14.jpg",
         "link": "https://www.wowhead.com/classic/item=213354/staff-of-the-evil-genius",
-        "slot": "Two-Hand",
+        "slot": slots.get("deux-mains"),
         "title": "Staff of the Evil Genius",
         "type": "Staff",
         "id": 213354
@@ -396,7 +389,7 @@ export const items: Record<string, Item> = {
     "cloak-of-invention": {
         "img": "https://wow.zamimg.com/images/wow/icons/medium/inv_misc_cape_11.jpg",
         "link": "https://www.wowhead.com/classic/item=213309/cloak-of-invention",
-        "slot": "Back",
+        "slot": slots.get("dos"),
         "title": "Cloak of Invention",
         "type": "Cloak",
         "id": 213309
@@ -404,7 +397,7 @@ export const items: Record<string, Item> = {
     "fighter-ace-gloves": {
         "img": "https://wow.zamimg.com/images/wow/icons/medium/inv_gauntlets_16.jpg",
         "link": "https://www.wowhead.com/classic/item=213300/fighter-ace-gloves",
-        "slot": "Hands",
+        "slot": slots.get("mains"),
         "title": "Fighter Ace Gloves",
         "type": "Cloth Armor",
         "id": 213300
@@ -412,7 +405,7 @@ export const items: Record<string, Item> = {
     "mech-menders-sash": {
         "img": "https://wow.zamimg.com/images/wow/icons/medium/inv_belt_04.jpg",
         "link": "https://www.wowhead.com/classic/item=213414/mech-menders-sash",
-        "slot": "Waist",
+        "slot": slots.get('taille'),
         "title": "Mech-Mender's Sash",
         "type": "Cloth Armor",
         "id": 213414
@@ -420,7 +413,7 @@ export const items: Record<string, Item> = {
     "mechanostrider-gear-shifter": {
         "img": "https://wow.zamimg.com/images/wow/icons/medium/inv_gizmo_pipe_02.jpg",
         "link": "https://www.wowhead.com/classic/item=213559/mechanostrider-gear-shifter",
-        "slot": "Ranged",
+        "slot": slots.get("a-distance"),
         "title": "Mechanostrider Gear Shifter",
         "type": "Wand",
         "id": 213559
@@ -428,7 +421,7 @@ export const items: Record<string, Item> = {
     "mechanostrider-muffler": {
         "img": "https://wow.zamimg.com/images/wow/icons/medium/inv_gizmo_pipe_04.jpg",
         "link": "https://www.wowhead.com/classic/item=213560/mechanostrider-muffler",
-        "slot": "One-Hand",
+        "slot": slots.get("a-une-main"),
         "title": "Mechanostrider Muffler",
         "type": "One-Handed Mace",
         "id": 213560
@@ -436,7 +429,7 @@ export const items: Record<string, Item> = {
     "electrocutioners-needle": {
         "img": "https://wow.zamimg.com/images/wow/icons/medium/inv_sword_30.jpg",
         "link": "https://www.wowhead.com/classic/item=213286/electrocutioners-needle",
-        "slot": "Main Hand",
+        "slot": slots.get("main-droite"),
         "title": "Electrocutioner's Needle",
         "type": "One-Handed Sword",
         "id": 213286
@@ -444,7 +437,7 @@ export const items: Record<string, Item> = {
     "irradiated-robe": {
         "img": "https://wow.zamimg.com/images/wow/icons/medium/inv_chest_cloth_42.jpg",
         "link": "https://www.wowhead.com/classic/item=215377/irradiated-robe",
-        "slot": "Chest",
+        "slot": slots.get("Torse"),
         "title": "Irradiated Robe",
         "type": "Cloth Armor",
         "id": 215377
@@ -452,7 +445,7 @@ export const items: Record<string, Item> = {
     "irradiated-boots": {
         "img": "https://wow.zamimg.com/images/wow/icons/medium/inv_boots_05.jpg",
         "link": "https://www.wowhead.com/classic/item=215378/irradiated-boots",
-        "slot": "Feet",
+        "slot": slots.get("pieds"),
         "title": "Irradiated Boots",
         "type": "Cloth Armor",
         "id": 215378
@@ -460,7 +453,7 @@ export const items: Record<string, Item> = {
     "irradiated-trousers": {
         "img": "https://wow.zamimg.com/images/wow/icons/medium/inv_pants_13.jpg",
         "link": "https://www.wowhead.com/classic/item=215379/irradiated-trousers",
-        "slot": "Legs",
+        "slot": slots.get("jambes"),
         "title": "Irradiated Trousers",
         "type": "Cloth Armor",
         "id": 215379
@@ -468,7 +461,7 @@ export const items: Record<string, Item> = {
     "welded-truesilver-ringlets": {
         "img": "https://wow.zamimg.com/images/wow/icons/medium/inv_bracer_06.jpg",
         "link": "https://www.wowhead.com/classic/item=213418/welded-truesilver-ringlets",
-        "slot": "Wrist",
+        "slot": slots.get("poignets"),
         "title": "Welded Truesilver Ringlets",
         "type": "Plate Armor",
         "id": 213418
@@ -476,7 +469,7 @@ export const items: Record<string, Item> = {
     "reflective-skullcap": {
         "img": "https://wow.zamimg.com/images/wow/icons/medium/inv_helmet_11.jpg",
         "link": "https://www.wowhead.com/classic/item=213279/reflective-skullcap",
-        "slot": "Head",
+        "slot": slots.get("tete"),
         "title": "Reflective Skullcap",
         "type": "Mail Armor",
         "id": 213279
@@ -484,7 +477,7 @@ export const items: Record<string, Item> = {
     "pulveri-marteau-oscillant": {
         "img": "https://wow.zamimg.com/images/wow/icons/medium/inv_hammer_08.jpg",
         "link": "https://www.wowhead.com/classic/fr/item=213297/pulvéri-marteau-oscillant",
-        "slot": "À une main",
+        "slot": slots.get("a-une-main"),
         "title": "Pulvéri-marteau oscillant",
         "type": "Masse à une main",
         "id": 213297
@@ -492,7 +485,7 @@ export const items: Record<string, Item> = {
     "bidulame-rougeoyante": {
         "img": "https://wow.zamimg.com/images/wow/icons/medium/inv_weapon_shortblade_06.jpg",
         "link": "https://www.wowhead.com/classic/fr/item=213410/bidulame-rougeoyante",
-        "slot": "Main droite",
+        "slot": slots.get("main-droite"),
         "title": "Bidulame rougeoyante",
         "type": "Dague",
         "id": 213410
@@ -500,7 +493,7 @@ export const items: Record<string, Item> = {
     "boute-feu-inextinguible-dizzleflick": {
         "img": "https://wow.zamimg.com/images/wow/icons/medium/inv_torch_lit.jpg",
         "link": "https://www.wowhead.com/classic/fr/item=213411/boute-feu-inextinguible-d-izzleflick",
-        "slot": "À distance",
+        "slot": slots.get("a-distance"),
         "title": "Boute-feu inextinguible d’Izzleflick",
         "type": "Baguette",
         "id": 213411
@@ -508,7 +501,7 @@ export const items: Record<string, Item> = {
     "bracelets-ornes-en-sombrefer": {
         "img": "https://wow.zamimg.com/images/wow/icons/medium/inv_bracer_12.jpg",
         "link": "https://www.wowhead.com/classic/fr/item=213318/bracelets-ornés-en-sombrefer",
-        "slot": "Poignets",
+        "slot": slots.get("poignets"),
         "title": "Bracelets ornés en sombrefer",
         "type": "Armures en cuir",
         "id": 213318
@@ -516,7 +509,7 @@ export const items: Record<string, Item> = {
     "ceinturon-de-sombre-vision": {
         "img": "https://wow.zamimg.com/images/wow/icons/medium/inv_belt_33.jpg",
         "link": "https://www.wowhead.com/classic/fr/item=213325/ceinturon-de-sombre-vision",
-        "slot": "Taille",
+        "slot": slots.get('taille'),
         "title": "Ceinturon de sombre vision",
         "type": "Armures en mailles",
         "id": 213325
@@ -524,7 +517,7 @@ export const items: Record<string, Item> = {
     "coupe-tete-supercharge": {
         "img": "https://wow.zamimg.com/images/wow/icons/medium/inv_axe_21.jpg",
         "link": "https://www.wowhead.com/classic/fr/item=213296/coupe-tête-superchargé",
-        "slot": "Deux mains",
+        "slot": slots.get("deux-mains"),
         "title": "Coupe-tête superchargé",
         "type": "Hache à deux mains",
         "id": 213296
@@ -532,7 +525,7 @@ export const items: Record<string, Item> = {
     "ceinture-de-levage-assistee": {
         "img": "https://wow.zamimg.com/images/wow/icons/medium/inv_belt_34.jpg",
         "link": "https://www.wowhead.com/classic/fr/item=215380/ceinture-de-levage-assistée",
-        "slot": "Taille",
+        "slot": slots.get('taille'),
         "title": "Ceinture de levage assistée",
         "type": "Armures en mailles",
         "id": 215380
@@ -540,7 +533,7 @@ export const items: Record<string, Item> = {
     "couverture-dingeniosite": {
         "img": "https://wow.zamimg.com/images/wow/icons/medium/inv_misc_cape_13.jpg",
         "link": "https://www.wowhead.com/classic/fr/item=213306/couverture-d-ingéniosité",
-        "slot": "Dos",
+        "slot": slots.get("dos"),
         "title": "Couverture d’ingéniosité",
         "type": "Cape",
         "id": 213306
@@ -548,7 +541,7 @@ export const items: Record<string, Item> = {
     "doigts-de-precision-des-arcanes": {
         "img": "https://wow.zamimg.com/images/wow/icons/medium/inv_gauntlets_10.jpg",
         "link": "https://www.wowhead.com/classic/fr/item=213320/doigts-de-précision-des-arcanes",
-        "slot": "Mains",
+        "slot": slots.get("mains"),
         "title": "Doigts de précision des arcanes",
         "type": "Armures en mailles",
         "id": 213320
@@ -556,7 +549,7 @@ export const items: Record<string, Item> = {
     "prototype-de-cape-parachute": {
         "img": "https://wow.zamimg.com/images/wow/icons/medium/inv_misc_cape_05.jpg",
         "link": "https://www.wowhead.com/classic/fr/item=213308/prototype-de-cape-parachute",
-        "slot": "Dos",
+        "slot": slots.get("dos"),
         "title": "Prototype de cape parachute",
         "type": "Cape",
         "id": 213308
@@ -564,7 +557,7 @@ export const items: Record<string, Item> = {
     "visioscope-de-tir-delite": {
         "img": "https://wow.zamimg.com/images/wow/icons/medium/inv_helmet_11.jpg",
         "link": "https://www.wowhead.com/classic/fr/item=213280/visioscope-de-tir-d-élite",
-        "slot": "Tête",
+        "slot": slots.get("tete"),
         "title": "Visioscope de tir d’élite",
         "type": "Armures en mailles",
         "id": 213280
@@ -572,7 +565,7 @@ export const items: Record<string, Item> = {
     "camail-en-filament-de-vrai-argent": {
         "img": "https://wow.zamimg.com/images/wow/icons/medium/inv_belt_28.jpg",
         "link": "https://www.wowhead.com/classic/fr/item=213417/camail-en-filament-de-vrai-argent",
-        "slot": "Tête",
+        "slot": slots.get("tete"),
         "title": "Camail en filament de vrai-argent",
         "type": "Armures en plaques",
         "id": 213417
@@ -580,7 +573,7 @@ export const items: Record<string, Item> = {
     "spallieres-paratonnerres": {
         "img": "https://wow.zamimg.com/images/wow/icons/medium/inv_shoulder_18.jpg",
         "link": "https://www.wowhead.com/classic/fr/item=213303/spallières-paratonnerres",
-        "slot": "Epaule",
+        "slot": slots.get("epaule"),
         "title": "Spallières paratonnerres",
         "type": "Armures en mailles",
         "id": 213303
@@ -588,7 +581,7 @@ export const items: Record<string, Item> = {
     "notes-dingenierie-de-thermojoncteur": {
         "img": "https://wow.zamimg.com/images/wow/icons/medium/inv_misc_note_03.jpg",
         "link": "https://www.wowhead.com/classic/fr/item=217351/notes-d-ingénierie-de-thermojoncteur",
-        "slot": "",
+        "slot": slots.get("cou"),
         "title": "Notes d’ingénierie de Thermojoncteur",
         "type": "Quête",
         "id": 217351
@@ -596,7 +589,7 @@ export const items: Record<string, Item> = {
     "poulet-dattaque-domestique": {
         "img": "https://wow.zamimg.com/images/wow/icons/medium/spell_magic_polymorphchicken.jpg",
         "link": "https://www.wowhead.com/classic/fr/item=215461/poulet-d-attaque-domestiqué",
-        "slot": "Bijou",
+        "slot": slots.get("bijou"),
         "title": "Poulet d’attaque domestiqué",
         "type": "Bijou",
         "id": 215461
@@ -604,7 +597,7 @@ export const items: Record<string, Item> = {
     "chambre-de-combustion-miniature": {
         "img": "https://wow.zamimg.com/images/wow/icons/medium/inv_misc_enggizmos_04.jpg",
         "link": "https://www.wowhead.com/classic/fr/item=213347/chambre-de-combustion-miniature",
-        "slot": "Bijou",
+        "slot": slots.get("bijou"),
         "title": "Chambre de combustion miniature",
         "type": "Bijou",
         "id": 213347
@@ -612,7 +605,7 @@ export const items: Record<string, Item> = {
     "experience-gyromatique-420b": {
         "img": "https://wow.zamimg.com/images/wow/icons/medium/inv_gizmo_05.jpg",
         "link": "https://www.wowhead.com/classic/fr/item=213348/expérience-gyromatique-420b",
-        "slot": "Bijou",
+        "slot": slots.get("bijou"),
         "title": "Expérience gyromatique 420b",
         "type": "Bijou",
         "id": 213348
@@ -620,7 +613,7 @@ export const items: Record<string, Item> = {
     "engrenage-dinnovation-en-surcharge": {
         "img": "https://wow.zamimg.com/images/wow/icons/medium/inv_misc_gear_01.jpg",
         "link": "https://www.wowhead.com/classic/fr/item=213282/engrenage-d-innovation-en-surcharge",
-        "slot": "Doigt",
+        "slot": slots.get("doigt"),
         "title": "Engrenage d’innovation en surcharge",
         "type": "Anneau",
         "id": 213282
@@ -628,7 +621,7 @@ export const items: Record<string, Item> = {
     "flacon-de-pilules-de-gniode": {
         "img": "https://wow.zamimg.com/images/wow/icons/medium/inv_valentinecolognebottle.jpg",
         "link": "https://www.wowhead.com/classic/fr/item=213349/flacon-de-pilules-de-gniode",
-        "slot": "Bijou",
+        "slot": slots.get("bijou"),
         "title": "Flacon de pilules de gniode",
         "type": "Bijou",
         "id": 213349
@@ -636,7 +629,7 @@ export const items: Record<string, Item> = {
     "dechiqueteur-arcanique-de-mekkatorque": {
         "img": "https://wow.zamimg.com/images/wow/icons/medium/inv_weapon_hand_08.jpg",
         "link": "https://www.wowhead.com/classic/fr/item=213409/déchiqueteur-arcanique-de-mekkatorque",
-        "slot": "Main droite",
+        "slot": slots.get("main-droite"),
         "title": "Déchiqueteur arcanique de Mekkatorque",
         "type": "Arme de pugilat",
         "id": 213409
@@ -644,7 +637,7 @@ export const items: Record<string, Item> = {
     "engrenage-de-deflagration-en-surcharge": {
         "img": "https://wow.zamimg.com/images/wow/icons/medium/inv_misc_gear_01.jpg",
         "link": "https://www.wowhead.com/classic/fr/item=213283/engrenage-de-déflagration-en-surcharge",
-        "slot": "Doigt",
+        "slot": slots.get("doigt"),
         "title": "Engrenage de déflagration en surcharge",
         "type": "Anneau",
         "id": 213283
@@ -652,7 +645,7 @@ export const items: Record<string, Item> = {
     "engrenage-de-devastation-en-surcharge": {
         "img": "https://wow.zamimg.com/images/wow/icons/medium/inv_misc_gear_01.jpg",
         "link": "https://www.wowhead.com/classic/fr/item=213284/engrenage-de-dévastation-en-surcharge",
-        "slot": "Doigt",
+        "slot": slots.get("doigt"),
         "title": "Engrenage de dévastation en surcharge",
         "type": "Anneau",
         "id": 213284
@@ -660,7 +653,7 @@ export const items: Record<string, Item> = {
     "fendoir-a-propulsion-de-thermojoncteur": {
         "img": "https://wow.zamimg.com/images/wow/icons/medium/inv_axe_03.jpg",
         "link": "https://www.wowhead.com/classic/fr/item=213416/fendoir-à-propulsion-de-thermojoncteur",
-        "slot": "Deux mains",
+        "slot": slots.get("deux-mains"),
         "title": "Fendoir à propulsion de Thermojoncteur",
         "type": "Hache à deux mains",
         "id": 213416
@@ -668,7 +661,7 @@ export const items: Record<string, Item> = {
     "petoire-personnalisee-de-thermojoncteur": {
         "img": "https://wow.zamimg.com/images/wow/icons/medium/inv_weapon_rifle_05.jpg",
         "link": "https://www.wowhead.com/classic/fr/item=213356/pétoire-personnalisée-de-thermojoncteur",
-        "slot": "À distance",
+        "slot": slots.get("a-distance"),
         "title": "Pétoire personnalisée de Thermojoncteur",
         "type": "Arme à feu",
         "id": 213356
@@ -676,7 +669,7 @@ export const items: Record<string, Item> = {
     "noyau-durci-de-wirdal": {
         "img": "https://wow.zamimg.com/images/wow/icons/medium/inv_gizmo_khoriumpowercore.jpg",
         "link": "https://www.wowhead.com/classic/fr/item=213350/noyau-durci-de-wirdal",
-        "slot": "Bijou",
+        "slot": slots.get("bijou"),
         "title": "Noyau durci de Wirdal",
         "type": "Bijou",
         "id": 213350
@@ -684,9 +677,10 @@ export const items: Record<string, Item> = {
     "reactivateur-dhyperflux-electromagnetique": {
         "img": "https://wow.zamimg.com/images/wow/icons/medium/inv_gizmo_01.jpg",
         "link": "https://www.wowhead.com/classic/fr/item=213281/réactivateur-d-hyperflux-électromagnétique",
-        "slot": "Tête",
+        "slot": slots.get("tete"),
         "title": "Réactivateur d’hyperflux électromagnétique",
         "type": "Armures en tissu",
         "id": 213281
     }
 }
+

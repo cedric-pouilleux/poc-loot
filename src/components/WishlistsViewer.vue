@@ -18,7 +18,7 @@
 <script lang="ts" setup>
 import {defineProps} from "vue";
 import {Wishlist} from "@/types";
-import {items} from "@/fixtures/items";
+import {items} from "@/fixtures/items/itemsFixtures";
 
 defineProps<{
   wishlists: Wishlist[]
