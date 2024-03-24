@@ -1,12 +1,8 @@
-import type {Mobs, OrderedLootTable, Raid} from "@/types";
+import type {ItemName, Mobs, OrderedLootTable, Raid} from "@/types";
 import {readonly, ref} from 'vue';
 import {items} from "@/fixtures/items";
 import {useWishlists} from "@/stores/wishlists.store";
-import {storeToRefs} from "pinia";
-
-function getRandomInt(max) {
-    return Math.floor(Math.random() * max);
-}
+import {getRandomInt} from "@/utils";
 
 export function useRandomizeRaid(raid: Raid) {
     const orderedLoots = ref<OrderedLootTable[]>([]);
@@ -14,10 +10,9 @@ export function useRandomizeRaid(raid: Raid) {
     const itemsCount = ref<number>(0);
 
     const wishlistStore = useWishlists();
-    const {wishlists} = storeToRefs(wishlistStore);
 
-    function extractMobLoot(mob: Mobs): string[] {
-        const obj: string[] = [];
+    function extractMobLoot(mob: Mobs): ItemName[] {
+        const obj: ItemName[] = [];
         mob.always && obj.push(mob.always);
         mob.tokens && obj.push(mob.tokens[getRandomInt(mob.tokens.length)][0]);
         mob.epic && obj.push(mob.epic[getRandomInt(mob.epic.length)][0]);
@@ -26,16 +21,15 @@ export function useRandomizeRaid(raid: Raid) {
         return obj;
     }
 
-    function generateTotalLoot() {
-        const loots = [];
+    function generateTotalLoot(): ItemName[] {
+        const loots: ItemName[] = [];
         raid.mobs.forEach(mob => {
             const mobLoot = extractMobLoot(mob);
             mobLoot.forEach(item => {
                 const loot = wishlistStore.generateMapByPriority(item);
                 if (loot.length) {
-                    const random = getRandomInt(loot.length);
-                    console.info(`${loot[random].player} win ${loot[random].itemKey} with ${loot[random].priority} priority`);
-                    wishlistStore.removeItemFromWishlist(loot[loot.length > 1 ? random : 0]);
+                    // console.info(`${loot[random].player} win ${loot[random].itemKey} with ${loot[random].priority} priority`);
+                    wishlistStore.removeItemFromWishlist(loot[loot.length > 1 ? getRandomInt(loot.length) : 0]);
                 }
             })
             loots.push(...mobLoot);
@@ -43,14 +37,12 @@ export function useRandomizeRaid(raid: Raid) {
         return loots;
     }
 
-    function runRaidSimulation() {
+    function runRaidSimulation(): void {
         const loots = generateTotalLoot();
         itemsCount.value += loots.length - 1;
         loots.forEach(item => {
             const exist = orderedLoots.value.findIndex(loot => loot.itemKey === item);
             if (exist !== -1) {
-                console.log(exist, item);
-                console.log(orderedLoots.value[exist]);
                 orderedLoots.value[exist].count++;
             } else {
                 orderedLoots.value.push({
@@ -61,6 +53,7 @@ export function useRandomizeRaid(raid: Raid) {
             }
         });
         raidsCount.value = raidsCount.value + 1;
+        wishlistStore.resetPriorities();
     }
 
     return {

@@ -14,7 +14,7 @@ describe('wishlists store loots attributions', () => {
         setActivePinia(createTestingPinia({
             createSpy: vi.fn,
             stubActions: false,
-            initialState: {'wishlists': {wishlists}}
+            initialState: {'wishlists-store': {wishlists}}
         }));
 
         expect(
@@ -31,7 +31,7 @@ describe('wishlists store loots attributions', () => {
         setActivePinia(createTestingPinia({
             createSpy: vi.fn,
             stubActions: false,
-            initialState: {'wishlists': {wishlists}}
+            initialState: {'wishlists-store': {wishlists}}
         }));
 
         expect(
@@ -48,7 +48,7 @@ describe('wishlists store loots attributions', () => {
         setActivePinia(createTestingPinia({
             createSpy: vi.fn,
             stubActions: false,
-            initialState: {'wishlists': {wishlists}}
+            initialState: {'wishlists-store': {wishlists}}
         }));
 
         expect(
@@ -66,7 +66,7 @@ describe('wishlists store loots attributions', () => {
         setActivePinia(createTestingPinia({
             createSpy: vi.fn,
             stubActions: false,
-            initialState: {'wishlists': {wishlists}}
+            initialState: {'wishlists-store': {wishlists}}
         }));
 
         expect(
@@ -86,7 +86,7 @@ describe('wishlists store loots attributions', () => {
         setActivePinia(createTestingPinia({
             createSpy: vi.fn,
             stubActions: false,
-            initialState: {'wishlists': {wishlists}}
+            initialState: {'wishlists-store': {wishlists}}
         }));
 
         const store = useWishlists();
@@ -102,11 +102,11 @@ describe('wishlists store loots attributions', () => {
         setActivePinia(createTestingPinia({
             createSpy: vi.fn,
             stubActions: false,
-            initialState: {'wishlists': {wishlists}}
+            initialState: {'wishlists-store': {wishlists}}
         }));
 
         const store = useWishlists();
-        
+
         store.removeItemFromWishlist({
             player: 'player1',
             priority: 1,
