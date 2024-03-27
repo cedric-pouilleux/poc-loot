@@ -325,7 +325,7 @@ export const items: Record<string, Item> = {
     "power-depleted-chest": {
         "img": "https://wow.zamimg.com/images/wow/icons/medium/inv_chest_chain_16.jpg",
         "link": "https://www.wowhead.com/classic/item=217008/power-depleted-chest",
-        "slot": slots.get("Torse"),
+        "slot": slots.get("torse"),
         "title": "Power Depleted Chest",
         "type": "Junk",
         "id": 217008
@@ -373,7 +373,7 @@ export const items: Record<string, Item> = {
     "mechbuilders-overalls": {
         "img": "https://wow.zamimg.com/images/wow/icons/medium/inv_shirt_14.jpg",
         "link": "https://www.wowhead.com/classic/item=213298/mechbuilders-overalls",
-        "slot": slots.get("Torse"),
+        "slot": slots.get("torse"),
         "title": "Mechbuilder's Overalls",
         "type": "Cloth Armor",
         "id": 213298
@@ -437,7 +437,7 @@ export const items: Record<string, Item> = {
     "irradiated-robe": {
         "img": "https://wow.zamimg.com/images/wow/icons/medium/inv_chest_cloth_42.jpg",
         "link": "https://www.wowhead.com/classic/item=215377/irradiated-robe",
-        "slot": slots.get("Torse"),
+        "slot": slots.get("torse"),
         "title": "Irradiated Robe",
         "type": "Cloth Armor",
         "id": 215377

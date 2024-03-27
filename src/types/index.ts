@@ -3,6 +3,7 @@ import {ref} from "vue";
 type Slot = {
     id: number,
     title: string,
+    slug: string,
 }
 
 export type Item = {

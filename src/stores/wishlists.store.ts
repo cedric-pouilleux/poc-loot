@@ -64,6 +64,6 @@ export const useWishlists = defineStore('wishlists-store', {
             return val;
         }
     }
- 
+
 })
 

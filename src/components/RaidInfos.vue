@@ -1,6 +1,6 @@
 <template>
   <div class="raid-infos">
-    <button @click="$emit('simulate')">Simulate next raid</button>
+    <Button label="Simulate next raid" @click="$emit('simulate')"/>
     <p> {{ raidsCount }} total raids</p>
     <p> {{ itemsCount }} total items</p>
   </div>
@@ -8,6 +8,8 @@
 
 <script lang="ts" setup>
 import {defineEmits, defineProps} from "vue";
+import Button from 'primevue/button';
+
 
 defineProps<{
   raidsCount: number;
