@@ -14,7 +14,7 @@ import {Item} from "@/types";
 defineProps<{
   items: [string, Item][],
 }>();
- 
+
 defineEmits<{
   (e: 'selected'): void
 }>();

@@ -68,6 +68,12 @@ export type Raid = {
     mobs: Mobs[]
 }
 
+export type WishlistSlot = {
+    slotId: number;
+    item?: Item;
+    priority: number;
+}
+
 export type ItemName =
     "transfigurateur-de-trogg-3000" |
     "ceinture-de-decoction-volatile" |

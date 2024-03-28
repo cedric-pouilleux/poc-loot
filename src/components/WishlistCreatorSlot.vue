@@ -1,5 +1,5 @@
 <template>
-  <div :style="{ 'background-image': `url(${emptyImageUrl})`}" class="slot">
+  <div :style="emptyImageUrl && { 'background-image': `url(${emptyImageUrl})`}" class="slot">
     <img v-if="itemImageUrl" :src="itemImageUrl"/>
   </div>
 </template>
@@ -8,7 +8,7 @@
 import {defineProps} from 'vue'
 
 defineProps<{
-  emptyImageUrl: string
+  emptyImageUrl?: string
   itemImageUrl?: string
 }>();
 
@@ -19,6 +19,7 @@ defineProps<{
   background-size: 36px;
   border-radius: 4px;
   width: 36px;
+  overflow: hidden;
   height: 36px;
   box-sizing: border-box;
   background-color: #333;
