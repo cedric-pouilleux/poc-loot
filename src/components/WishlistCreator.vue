@@ -1,42 +1,51 @@
 <template>
   <div class="wishlist-creator">
-    <div v-for="slot in wishlistSlotsMap" :key="slot.key" :class="slot.key" @click="handleClick($event, slot.key)">
-      <div :style="{ 'background-image': `url(${slot.emptyImg})`}" class="slot">
-        <img v-if="slotItems[slot.key]" :src="slotItems[slot.key].img"/>
-      </div>
-      <OverlayPanel :key="slot.key" :ref="el => { refs[slot.key] = el }" append-to="body">
+    <div v-for="slot in wishlistSlotsMap" :key="slot.key" @click="handleClick($event, slot.id)">
+      <div class="wishlist-creator__priority">{{ slotItems[slot.id - 1].priority }}</div>
+      <WishlistCreatorSlot :empty-image-url="slot.emptyImg" :item-image-url="slotItems[slot.id - 1].item?.img"/>
+      <OverlayPanel :key="slot.id" :ref="el => { refs[slot.id] = el }" append-to="body">
         {{ slots.get(slot.key).title }}
-        <div v-for="item in itemsSlots(slot.key)" :id="item[1].id" :key="item" class="wishlist-creator__panel-list">
-          <RadioButton v-model="slotItems[slot.key]" :name="item[1].title" :value="item[1]"/>
-          <label style="margin-left: 8px">
-            <a :data-wowhead="item[1].link" :href="item[1].link" target="_blank">{{ item[1].title }}</a>
-          </label>
-        </div>
+        <InputNumber v-model="slotItems[slot.id -1].priority" :inputId="`inputId${slot.key}`" :max="18" :min="0"
+                     showButtons/>
+        <WishlistCreatorSlotItemsList v-model:selected="slotItems[slot.id -1].item" :items="itemsSlots(slot.key)"/>
       </OverlayPanel>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
-import {reactive, ref} from 'vue';
+import {defineProps, reactive, ref, withDefaults} from 'vue';
 import {items} from "@/fixtures/items/itemsFixtures";
 import {wishlistSlotsMap} from "@/fixtures/items/wishlistSlotsItems";
 import {Item} from "@/types";
+import WishlistCreatorSlot from '@/components/WishlistCreatorSlot.vue';
+import WishlistCreatorSlotItemsList from '@/components/WishlistCreatorSlotItemsList.vue';
 import {slots} from "@/fixtures/items/slotsFixtures";
 
 const refs = ref([]);
 
-const slotItems = reactive({
-  tete: items["reflective-skullcap"],
-  cou: items["notes-dingenierie-de-thermojoncteur"],
+export type WishlistSlot = {
+  slotId: number;
+  item?: Item;
+  priority: number;
+}
+
+const props = withDefaults(defineProps<{ wishlist: any }>(), {
+  wishlist: () => wishlistSlotsMap.map(item => ({
+    slotId: item.id,
+    item: undefined,
+    priority: 0
+  })),
 });
+
+const slotItems = reactive<WishlistSlot[]>(props.wishlist);
 
 function itemsSlots(key): [string, Item][] {
   //CARE => StarWith used because key name slot is Bijou and Bijou2, and we search items from item.key
   return Object.entries(items).filter((item) => key.startsWith(item[1].slot.slug));
 }
 
-function handleClick(event: Event, key: string): void {
+function handleClick(event: Event, key: number): void {
   refs.value[key].toggle(event);
 }
 </script>
@@ -47,27 +56,20 @@ function handleClick(event: Event, key: string): void {
   padding: 10px;
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 20px;
 
-  &__panel-list {
-    padding: 4px 0;
+  &__priority {
+    text-align: center;
+    line-height: 26px;
+    font-size: 12px;
+    color: #ccc;
   }
+
 
   &__left, &__right, &__bottom {
     display: flex;
     flex-direction: column;
     gap: 10px;
-  }
-
-  .slot {
-    background-size: 36px;
-    border-radius: 4px;
-    width: 36px;
-    overflow: hidden;
-    height: 36px;
-    box-sizing: border-box;
-    background-color: #333;
-    cursor: pointer;
   }
 }
 </style>

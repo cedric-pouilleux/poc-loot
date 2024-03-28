@@ -7,6 +7,7 @@ import PrimeVue from 'primevue/config';
 import OverlayPanel from 'primevue/overlaypanel';
 import Button from 'primevue/button';
 import RadioButton from 'primevue/radiobutton';
+import InputNumber from 'primevue/inputnumber';
 
 const pinia = createPinia();
 const app = createApp(App);
@@ -17,6 +18,7 @@ app.use(PrimeVue);
 app.component('Button', Button);
 app.component('RadioButton', RadioButton);
 app.component('OverlayPanel', OverlayPanel);
+app.component('InputNumber', InputNumber);
 
 app.mount('#app');
 
